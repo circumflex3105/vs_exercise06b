@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.example;
+
+option java_multiple_files = true;
+
+message Messwert {
+  string name = 1;
+  double wert = 2;
+}
+
+message Bewertung {
+  string anweisung = 1;
+  string zeitstempel = 2;
+}
+
+service MesswertService {
+  rpc Analysiere(Messwert) returns (Bewertung);
+}
